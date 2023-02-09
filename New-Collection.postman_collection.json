@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "7967cd51-53b5-4249-8458-0d1fa2ceea02",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6315643"
+	},
+	"item": [
+		{
+			"name": "mailing-system",
+			"item": [
+				{
+					"name": "register-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Vaibhav\",\r\n    \"lastname\": \"Namburi\",\r\n    \"username\": \"vaibhav@email-reputation.co\",\r\n    \"password\": \"b5Jm8zM@NWDM58FV2%\",\r\n    \"SMTPHost\": \"smtp.zoho.com.au\",\r\n    \"SMTPPort\": 465,\r\n    \"differentreplyaddress\": 1,\r\n    \"messageperday\": 40,\r\n    \"minimumtimegap\": 5,\r\n    \"imaphost\": \"imap.zoho.com.au\",\r\n    \"imapport\": 993,\r\n    \"smtpsecure\": \"SSL\",\r\n    \"imapsecure\": \"TLS\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/smtp-setting",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"smtp-setting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"chaudhariniketa31394@gmailcom\",\r\n    \"subject\":\"testing\",\r\n    \"body\":\"Hello Niketa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/send-email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"send-email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
