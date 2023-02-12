@@ -4,17 +4,17 @@ import { sendError, sendSuccess } from "../helper/response";
 
 export const sendEmail = async (req:Request,res:Response,authuser:any,mailObj:any) => {
   const transporter = nodemailer.createTransport({
-    host: authuser.SMTPHost,
-    secure: authuser.smtpsecure,
-    port: authuser.SMTPPort,
+    host: authuser[0].SMTPHost,
+    secure: authuser[0].smtpsecure == 'SSL' ? true:false,
+    port: authuser[0].SMTPPort,
     auth: {
-      user: authuser.username,
-      pass: authuser.password,
+      user: authuser[0].username,
+      pass: authuser[0].password,
     }
   });
 
   const options = {
-    from: authuser.username,
+    from: authuser[0].username,
     to: mailObj.email,
     // replyTo: reply_to,
     subject: mailObj.subject,
